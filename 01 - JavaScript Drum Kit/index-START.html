@@ -77,6 +77,10 @@ window.addEventListener('keydown', function(e)
   // Add the transition end event for when something changes and ends that transition
 
 }); 
+// Define the function remove transition and set it so if the event with a property name of transform doesn't equal transform then end the function
+function removeTransition(e) {
+  if(e.propertyName !== 'transform') return;
+} 
 
 // Select all of the keys and define as a variable
 const keys = document.querySelectorAll('.key');
