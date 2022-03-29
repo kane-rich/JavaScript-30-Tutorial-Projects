@@ -60,13 +60,14 @@
 <script>
 // On key press find audio data key
 // On the window, add an event listener which listens for the keydown action (pressing key), and a function of event.
-window.addEventListener('keydown', function(e) 
+
+// Final change of unattaching the function from the keydown event by rejigging the code
+function playSound(e) {
 // Then define audio as a constant variable by querySelecting the audio date key code after console logging the event to find the keyCode. ES6 template literal
-{
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   // Adding the class of key
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-
+  
   // Then because not all keys have an audio keyCode we can use the if command to determine when there is no audio and use the return to stop the execution of a function and return a value
   if (!audio) return; // 
   audio.currentTime = 0; // This rewinds to the start so that the audioKey does not have a lag when pressed
@@ -75,8 +76,7 @@ window.addEventListener('keydown', function(e)
   // Also find key div and add class of playing
   key.classList.add('playing');
   // Add the transition end event for when something changes and ends that transition
-
-}); 
+} 
 // Define the function remove transition and set it so if the event with a property name of transform doesn't equal transform then end the function
 function removeTransition(e) {
   if(e.propertyName !== 'transform') return;
@@ -89,6 +89,8 @@ function removeTransition(e) {
 const keys = document.querySelectorAll('.key');
 // Listen for an event called transition end on each key, and add a function called removeTransition
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+// Moved event listener to the bottom of the function
+window.addEventListener('keydown', playSound);
 
 </script>
 
