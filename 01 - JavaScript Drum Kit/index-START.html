@@ -69,7 +69,7 @@ function playSound(e) {
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   
   // Then because not all keys have an audio keyCode we can use the if command to determine when there is no audio and use the return to stop the execution of a function and return a value
-  if (!audio) return; // 
+if (!audio) return; // 
   audio.currentTime = 0; // This rewinds to the start so that the audioKey does not have a lag when pressed
   audio.play();
   // console.log(key);
