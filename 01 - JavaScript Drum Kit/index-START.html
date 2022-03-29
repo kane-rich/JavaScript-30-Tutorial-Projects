@@ -58,7 +58,16 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+// On key press find audio data key
+// On the window, add an event listener which listens for the keydown action (pressing key), and a function of event.
+window.addEventListener('keydown', function(e) 
+// Then define audio as a constant variable by querySelecting the audio date key code after console logging the event to find the keyCode. ES6 template literal
+{
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  // Console log the audio variable
+  console.log(audio);
+});
+// Also find key div and add class of playing
 </script>
 
 
