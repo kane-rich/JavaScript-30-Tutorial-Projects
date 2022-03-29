@@ -75,9 +75,13 @@ window.addEventListener('keydown', function(e)
   // Also find key div and add class of playing
   key.classList.add('playing');
   // Add the transition end event for when something changes and ends that transition
-  key.classList.remove('playing');
+
 }); 
 
+// Select all of the keys and define as a variable
+const keys = document.querySelectorAll('.key');
+// Listen for an event called transition end on each key, and add a function called removeTransition
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 </script>
 
