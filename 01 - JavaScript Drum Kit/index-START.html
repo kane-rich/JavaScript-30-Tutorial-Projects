@@ -80,6 +80,9 @@ window.addEventListener('keydown', function(e)
 // Define the function remove transition and set it so if the event with a property name of transform doesn't equal transform then end the function
 function removeTransition(e) {
   if(e.propertyName !== 'transform') return;
+  // console.log(e.propertyName);
+  // This statement is equal to whatever got called against the function, so in this case this is the event listener that got called against the key in the forEach statement
+  this.classList.remove('playing'); 
 } 
 
 // Select all of the keys and define as a variable
