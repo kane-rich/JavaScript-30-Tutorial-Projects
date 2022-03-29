@@ -64,13 +64,21 @@ window.addEventListener('keydown', function(e)
 // Then define audio as a constant variable by querySelecting the audio date key code after console logging the event to find the keyCode. ES6 template literal
 {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  // Console log the audio variable - then replace the log with the next line of code
-  
+  // Adding the class of key
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
   // Then because not all keys have an audio keyCode we can use the if command to determine when there is no audio and use the return to stop the execution of a function and return a value
   if (!audio) return; // 
+  audio.currentTime = 0; // This rewinds to the start so that the audioKey does not have a lag when pressed
   audio.play();
+  // console.log(key);
+  // Also find key div and add class of playing
+  key.classList.add('playing');
+  // Add the transition end event for when something changes and ends that transition
+  key.classList.remove('playing');
 }); 
-// Also find key div and add class of playing
+
+
 </script>
 
 
