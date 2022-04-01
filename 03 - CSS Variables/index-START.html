@@ -21,6 +21,22 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <style>
+    /* Declare CSS variables on the root document in this case. Uses -- to define and then when calling the variable it's var(--variable);*/
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .h1 {
+      color: var(--base);
+    }
 
     /*
       misc styles, nothing to do with CSS variables
@@ -45,6 +61,18 @@
   </style>
 
   <script>
+    // Update the variables with script
+
+    // This selects all controls inputs on the 
+    const inputs = document.querySelectorAll('.controls input');
+
+    function handleUpdate() {
+      console.log(this.value);
+    }
+
+    // For each input on screen, arrow function adds the event listener which is triggered on the change input and runs the handleUpdate function.
+    inputs.forEach(input => input.addEventListener('change', handleUpdate))
+
   </script>
 
 </body>
