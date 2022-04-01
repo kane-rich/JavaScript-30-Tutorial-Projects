@@ -44,6 +44,12 @@
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+    // Map takes in an array, does something with is, and returns a new array but of the same length. Will always return the same amount of items as you give it, like a box going through a factory line.
+
+    // From the inventors list, return the arrow function and first and last names using template literal then log the names.
+    const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+    console.log(fullNames);
+    
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
