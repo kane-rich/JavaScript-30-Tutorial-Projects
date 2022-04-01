@@ -42,9 +42,11 @@
     // If statement to determine if inventor was born between 1500 & 1600
       if(inventor.year >= 1500 && inventor.year <= 1599) {
       // Return true keeps the data that is returned
-      return true;
+        return true;
       }
-    }
+    });
+    // Return a table of the information
+    console.table(fifteen);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names

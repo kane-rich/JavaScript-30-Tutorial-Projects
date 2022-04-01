@@ -70,7 +70,7 @@
     function handleUpdate() {
       const suffix = this.dataset.sizing || '';
       // console.log(this.name);
-      document.documentElement.style.setProperty(`--${this.name}`, this.value);
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
 
     // For each input on screen, arrow function adds the event listener which is triggered on the change input and runs the handleUpdate function.
