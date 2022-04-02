@@ -98,19 +98,24 @@
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
     // You can call querySelector on any existing DOM element, it doesn't have to be on the document.
     // Calling information from the webpage
-    const category = document.querySelector('.mw-category');
-    // Search for the a tag (Later amending this to an array)
-    const links = Array.from(category.querySelectorAll('a'));
-    // Convert the list of links to a list of names
-    const de = links
-                    .map(link => link.textContent)
-                    // Filter out for only the items that include 'de'
-                    .filter(streetName => streetName.includes('de'));
-
-    // Filter that list of names for only ones that feature the desired part of the name
+    // const category = document.querySelector('.mw-category');
+    // // Search for the a tag (Later amending this to an array)
+    // const links = Array.from(category.querySelectorAll('a'));
+    // // Convert the list of links to a list of names
+    // const de = links
+    //                 .map(link => link.textContent)
+    //                 // Filter out for only the items that include 'de'
+    //                 .filter(streetName => streetName.includes('de'));
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const alpha = people.sort(function(lastOne, nextOne) {
+    // Turn this into an array by using split on the common denominators between the list items, which is the space and the comma between first and last name
+      const [aLast, aFirst] = lastOne.split(', ');
+      const [bLast, bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1 : -1;
+    });
+    console.log(alpha)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
