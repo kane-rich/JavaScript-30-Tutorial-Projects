@@ -99,8 +99,8 @@
     // You can call querySelector on any existing DOM element, it doesn't have to be on the document.
     // Calling information from the webpage
     const category = document.querySelector('.mw-category');
-    // Search for the a tag
-    const links = category.querySelectorAll('a');
+    // Search for the a tag (Later amending this to an array)
+    const links = Array.from(category.querySelectorAll('a'));
     // Convert the list of links to a list of names
     const de = links.map(link => link.textContent);
 
