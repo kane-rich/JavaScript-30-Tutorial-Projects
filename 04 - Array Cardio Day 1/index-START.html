@@ -121,6 +121,18 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    // Use reduce to take the item from the object in this case the list of data
+    const transportation = data.reduce(function(obj, item) {
+      // If no object item is present, return as 0 - we need to add as a 0.
+      if(!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj; // Here the object is returned
+      // Start with a blank object
+    }, {});
+    console.log(transportation)
+
   </script>
 </body>
 </html>
