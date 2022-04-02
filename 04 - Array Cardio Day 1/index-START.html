@@ -96,7 +96,15 @@
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    // You can call querySelector on any existing DOM element, it doesn't have to be on the document.
+    // Calling information from the webpage
+    const category = document.querySelector('.mw-category');
+    // Search for the a tag
+    const links = category.querySelectorAll('a');
+    // Convert the list of links to a list of names
+    const de = links.map(link => link.textContent);
 
+    // Filter that list of names for only ones that feature the desired part of the name
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
