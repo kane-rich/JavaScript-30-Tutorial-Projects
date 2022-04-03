@@ -61,18 +61,20 @@
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
-      border: 1px solid red;
       flex: 1 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-       /* Hiding the first flex row at the top - each of the first child */
+    /* Hiding the first flex row at the top - each of the first child */
     .panel > *:first-child { transform: translateY(-100%); }
-        /* Hiding the second flex row at the bottom */
-    .panel > *:first-child { transform: translateY(100%); }
-
+    /* Hiding the second flex row at the bottom */
+    .panel > *:last-child { transform: translateY(100%); }
+    /* Adding a class for the transform to move into position on first child */
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    /* Adding a class for the transform to move into position on last child */
+    .panel.open-active *:last-child { transform: translateY(0); }
 
  
 
@@ -92,6 +94,8 @@
     }
 
     .panel.open {
+      /* Will take up 5 times the amount of room here */
+      flex: 5;
       font-size: 40px;
     }
 
@@ -127,7 +131,15 @@
   </div>
 
   <script>
+    // Grab all of the panels.
+    const panels = document.querySelectorAll('.panels');
 
+    // Write a function that will toggle the class of on, open.
+    function toggleOpen() {
+      this.classList.toggle('.open');
+    }
+    // For each of the panels listen for a click and then run the toggleOpen function.
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
   </script>
 
 
