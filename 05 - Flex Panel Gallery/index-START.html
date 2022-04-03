@@ -132,14 +132,24 @@
 
   <script>
     // Grab all of the panels.
-    const panels = document.querySelectorAll('.panels');
+    const panels = document.querySelectorAll('.panel');
 
     // Write a function that will toggle the class of on, open.
     function toggleOpen() {
+      console.log("Hello");
       this.classList.toggle('.open');
+    }
+
+    // Adding in the second function here for the toggleActive transitionend
+    function toggleActive(e) {
+      console.log(e.propertyName);
+
     }
     // For each of the panels listen for a click and then run the toggleOpen function.
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    // Listen for the transition end event event and toggle class of open-active
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
   </script>
 
 
