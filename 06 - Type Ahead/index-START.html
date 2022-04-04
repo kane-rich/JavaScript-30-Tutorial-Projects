@@ -50,6 +50,15 @@ function findMatches(wordToMatch, cities) {
 // Got the data
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
+  // Create the HTML that we need by looping over it with a function and return the HTML
+  const html = matchArray.map(place => {
+    return `
+      <li>
+        <span class="name">${place.city}, ${place.state}</span>
+        <span class="population">${place.population}</span>
+      </li>
+    `;
+  })
 }
 
 const searchInput = document.querySelector('.search');
