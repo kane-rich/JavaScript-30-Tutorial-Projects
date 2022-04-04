@@ -47,6 +47,18 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
+// Got the data
+function displayMatches() {
+  const matchArray = findMatches(this.value, cities);
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+// Change event only fires when you go off that input
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
 </script>
 </body>
 </html>
