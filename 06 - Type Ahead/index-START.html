@@ -17,6 +17,18 @@
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
+// Add an empty array to put the cities into
+const cities = [];
+
+// FETCH api in the browser - Fetch will return a promise
+// const prom = fetch(endpoint);
+// console.log(prom)
+
+// The data that comes back from the Fetch, the query doesn't know what data this is yet.
+fetch(endpoint).then(blob => console.log(blob));
+
+// Blob has to be converted from the raw data that it is in into
+
 </script>
 </body>
 </html>
