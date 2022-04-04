@@ -35,6 +35,14 @@ fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data))
 
+// Take the array and filter down into a subset where you can look for it
+function findMatches(wordToMatch, cities) {
+  return cities.filter(place => {
+    // here we need to figure out if the city or state matches what was searched
+    
+  });
+}
+
 </script>
 </body>
 </html>
