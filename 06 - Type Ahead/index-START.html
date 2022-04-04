@@ -52,6 +52,8 @@ function displayMatches() {
   const matchArray = findMatches(this.value, cities);
   // Create the HTML that we need by looping over it with a function and return the HTML
   const html = matchArray.map(place => {
+    // Add a regex to replace the word with a span class - globally and insensitively (to upper/lower case = 'gi')
+    const regex = new RegExp(this.value, 'gi')
     return `
       <li>
         <span class="name">${place.city}, ${place.state}</span>
