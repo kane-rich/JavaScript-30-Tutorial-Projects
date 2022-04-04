@@ -45,7 +45,6 @@
       background-size: cover;
       flex: 1;
       justify-content: center;
-      align-items: center;
       display: flex;
       flex-direction: column;
     }
@@ -69,18 +68,12 @@
 
     /* Hiding the first flex row at the top - each of the first child */
     .panel > *:first-child { transform: translateY(-100%); }
+      /* Adding a class for the transform to move into position on first child */
+    .panel.open-active > *:first-child { transform: translateY(0); }
     /* Hiding the second flex row at the bottom */
     .panel > *:last-child { transform: translateY(100%); }
-    /* Adding a class for the transform to move into position on first child */
-    .panel.open-active > *:first-child { transform: translateY(0); }
     /* Adding a class for the transform to move into position on last child */
     .panel.open-active *:last-child { transform: translateY(0); }
-
- 
-
-
-
-
 
     .panel p {
       text-transform: uppercase;
@@ -136,13 +129,14 @@
 
     // Write a function that will toggle the class of on, open.
     function toggleOpen() {
-      console.log("Hello");
-      this.classList.toggle('.open');
+      console.log('Hello');
+      this.classList.toggle('open');
     }
 
     // Adding in the second function here for the toggleActive transitionend
     function toggleActive(e) {
-      if(e.propertyName.includes('flex')) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
         this.classList.toggle('open-active');
       }
     }
