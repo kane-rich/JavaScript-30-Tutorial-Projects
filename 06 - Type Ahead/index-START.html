@@ -42,7 +42,8 @@ function findMatches(wordToMatch, cities) {
 
     // How do you put a variable into a regular expression
     const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match()
+    // This will check if the city or the state is true
+    return place.city.match(regex) || place.state.match(regex)
   });
 }
 
