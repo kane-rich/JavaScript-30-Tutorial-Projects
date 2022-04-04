@@ -59,12 +59,13 @@ function displayMatches() {
   // Create the HTML that we need by looping over it with a function and return the HTML
   const html = matchArray.map(place => {
     // Add a regex to replace the word with a span class - globally and insensitively (to upper/lower case = 'gi')
-    const regex = new RegExp(this.value, 'gi')
-    const cityName = place.city.replace(regex, `<span class="h1">${this.value}</span>`)
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = place.city.replace(regex, `<span class="h1">${this.value}</span>`);
+    const stateName = place.state.replace(regex, `<span class="h1">${this.value}</span>`);
     return `
       <li>
-        <span class="name">${place.city}, ${place.state}</span>
-        <span class="population">${place.population}</span>
+        <span class="name">${cityName}, ${stateName}</span>
+        <span class="population">${numberWithCommas(place.population)}</span>
       </li>
     `;
     // Turn the array into a string with .join
