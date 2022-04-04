@@ -58,7 +58,9 @@ function displayMatches() {
         <span class="population">${place.population}</span>
       </li>
     `;
-  })
+    // Turn the array into a string with .join
+  }).join('');
+  suggestions.innerHTML = html;
 }
 
 const searchInput = document.querySelector('.search');
