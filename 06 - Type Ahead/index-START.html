@@ -25,9 +25,10 @@ const cities = [];
 // console.log(prom)
 
 // The data that comes back from the Fetch, the query doesn't know what data this is yet.
-fetch(endpoint).then(blob => console.log(blob));
-
-// Blob has to be converted from the raw data that it is in into
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => console.log(data))
+// Blob has to be converted from the raw data that it is in into JSON and then console.log the data
 
 </script>
 </body>
